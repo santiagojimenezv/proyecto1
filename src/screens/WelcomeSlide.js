@@ -16,7 +16,7 @@ const WelcomeSlide = () => {
     return (
       <View>
         <ImageBackground
-          source={require("./images/slide1.png")}
+          source={require("./images/img1.jpg")}
           style={styles.imgBackground}
         ></ImageBackground>
       </View>
@@ -26,7 +26,7 @@ const WelcomeSlide = () => {
     return (
       <View>
         <ImageBackground
-          source={require("./images/slide1.png")}
+          source={require("./images/img2.jpg")}
           style={styles.imgBackground}
         ></ImageBackground>
       </View>
@@ -36,7 +36,7 @@ const WelcomeSlide = () => {
     return (
       <View>
         <ImageBackground
-          source={require("./images/slide1.png")}
+          source={require("./images/carrito.png")}
           style={styles.imgBackground}
         >
           <Button title="Registrarse" onPress={goToRegister} />
