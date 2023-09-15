@@ -10,6 +10,22 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
 
+  console.log("Entre al app")
+  fetch("https://fakestoreapi.com/products/",{
+      method: 'GET'
+    })
+    .then((response) => response.json())
+    .then((responseJson) =>{
+      console.log(responseJson);
+    })
+    .catch((error) =>{
+      console.error(error);
+    })
+  componentDidMount = ()=>{
+    
+
+  }
+  
   const [userRegistered, setUserRegistered] = useState(false);
 
   const handleOrientationComplete = () => {
