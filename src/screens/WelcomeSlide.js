@@ -6,13 +6,22 @@ import Swiper from "react-native-swiper";
 const WelcomeSlide = () => {
   const navigation = useNavigation();
   const goToRegister = () => {
-    navigation.navigate("Registro");
+    navigation.navigate("Register");
   };
   const goToLogin = () => {
     navigation.navigate("Login");
   };
+  const goToProducts = () => {
+    navigation.navigate("Products");
+  };
+  const goToPokemon = () => {
+    navigation.navigate("Pokemon");
+  };
+  const goToMovies = () => {
+    navigation.navigate("Movies");
+  };
 
-  const Slide1 = () => {
+  /* const Slide1 = () => {
     return (
       <View>
         <ImageBackground
@@ -31,25 +40,29 @@ const WelcomeSlide = () => {
         ></ImageBackground>
       </View>
     );
-  };
+  }; */
   const Slide3 = () => {
     return (
       <View>
-        <ImageBackground
+        {/* <ImageBackground
           source={require("./images/carrito.png")}
           style={styles.imgBackground}
-        >
-          <Button title="Registrarse" onPress={goToRegister} />
-          <Button title="Iniciar sesión" onPress={goToLogin} />
-        </ImageBackground>
+        > */}
+          {/* <Button title="Register" onPress={goToRegister} />
+          <Button title="Log in" onPress={goToLogin} /> */}
+
+          <Button title="Products" onPress={goToProducts} />
+          <Button title="Pokemon" onPress={goToPokemon} />
+          <Button title="Movies" onPress={goToMovies} />
+        {/* </ImageBackground> */}
       </View>
     );
   };
 
   return (
     <Swiper>
-      <Slide1 />
-      <Slide2 />
+      {/* <Slide1 />
+      <Slide2 /> */}
       <Slide3 />
     </Swiper>
   );

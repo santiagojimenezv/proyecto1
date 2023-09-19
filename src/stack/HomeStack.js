@@ -5,6 +5,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import WelcomeSlide from "../screens/WelcomeSlide";
 import RegisterForm from "../screens/RegisterForm";
 import LoginForm from "../screens/LoginForm"
+import ProductsApiFetch from '../screens/ProductsApiAxios';
+import { PokemonApiAxios } from '../screens/PokemonApiAxios';
+import MoviesApiAxios from '../screens/MoviesApiAxios';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +20,7 @@ const HomeStack = () => {
     };
 
     useEffect(() => {
-         Dimensions.addEventListener("change", handleOrientationChange);
+        const a = Dimensions.addEventListener("change", handleOrientationChange);
         return () => {
             //Dimensions.removeEventListener("change", handleOrientationChange);
         };
@@ -42,14 +45,29 @@ const HomeStack = () => {
                 options={{ headerShown: false }} // Esto oculta el encabezado
             />
             <Stack.Screen
-                name="Registro"
+                name="Register"
                 component={RegisterForm}
-                options={{ title: "Registro" }} // Personaliza el título del encabezado
+                options={{ title: "Register" }} // Personaliza el título del encabezado
             />
             <Stack.Screen
                 name="Login"
                 component={LoginForm}
-                options={{ title: "Login" }} // Personaliza el título del encabezado
+                options={{ title: "Login" }} 
+            />
+            <Stack.Screen
+                name="Products"
+                component={ProductsApiFetch}
+                options={{ title: "Products" }} 
+            />
+            <Stack.Screen
+                name="Pokemon"
+                component={PokemonApiAxios}
+                options={{ title: "Pokemon" }} 
+            />
+            <Stack.Screen
+                name="Movies"
+                component={MoviesApiAxios}
+                options={{ title: "Movies" }} 
             />
         </Stack.Navigator>
     )
