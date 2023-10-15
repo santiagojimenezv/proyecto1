@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStack from "./src/stack/HomeStack";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Posts } from "./src/screens/Posts";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ export default function App() {
           tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />)
         }}>
-
+          
         </Tab.Screen>
       </Tab.Navigator>
     </NavigationContainer>

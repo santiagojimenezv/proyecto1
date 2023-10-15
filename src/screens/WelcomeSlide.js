@@ -1,76 +1,68 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Button, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Swiper from "react-native-swiper";
 
 const WelcomeSlide = () => {
   const navigation = useNavigation();
-  const goToRegister = () => {
-    navigation.navigate("Register");
-  };
-  const goToLogin = () => {
-    navigation.navigate("Login");
-  };
+
   const goToProducts = () => {
     navigation.navigate("Products");
   };
+
   const goToPokemon = () => {
     navigation.navigate("Pokemon");
   };
+
   const goToMovies = () => {
     navigation.navigate("Movies");
   };
 
-  /* const Slide1 = () => {
-    return (
-      <View>
-        <ImageBackground
-          source={require("./images/img1.jpg")}
-          style={styles.imgBackground}
-        ></ImageBackground>
-      </View>
-    );
-  };
-  const Slide2 = () => {
-    return (
-      <View>
-        <ImageBackground
-          source={require("./images/img2.jpg")}
-          style={styles.imgBackground}
-        ></ImageBackground>
-      </View>
-    );
-  }; */
-  const Slide3 = () => {
-    return (
-      <View>
-        {/* <ImageBackground
-          source={require("./images/carrito.png")}
-          style={styles.imgBackground}
-        > */}
-          {/* <Button title="Register" onPress={goToRegister} />
-          <Button title="Log in" onPress={goToLogin} /> */}
-
-          <Button title="Products" onPress={goToProducts} />
-          <Button title="Pokemon" onPress={goToPokemon} />
-          <Button title="Movies" onPress={goToMovies} />
-        {/* </ImageBackground> */}
-      </View>
-    );
+  const goToPosts = () => {
+    navigation.navigate("Posts");
   };
 
   return (
     <Swiper>
-      {/* <Slide1 />
-      <Slide2 /> */}
-      <Slide3 />
+      <View style={styles.slide}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={goToProducts}>
+            <Text style={styles.buttonText}>Products</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={goToPokemon}>
+            <Text style={styles.buttonText}>Pokemon</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={goToMovies}>
+            <Text style={styles.buttonText}>Movies</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={goToPosts}>
+            <Text style={styles.buttonText}>Posts</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </Swiper>
   );
 };
+
 const styles = StyleSheet.create({
-  imgBackground: {
-    width: "100%",
-    height: "90%",
+  slide: {
+    flex: 1,
+    justifyContent: "center", // Center content vertically
+    alignItems: "center", // Center content horizontally
+  },
+  buttonContainer: {
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "#3498db",
+    padding: 15,
+    margin: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 18,
   },
 });
+
 export default WelcomeSlide;

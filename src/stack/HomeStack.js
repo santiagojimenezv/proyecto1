@@ -2,12 +2,14 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import { Dimensions, StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+
 import WelcomeSlide from "../screens/WelcomeSlide";
 import RegisterForm from "../screens/RegisterForm";
 import LoginForm from "../screens/LoginForm"
 import ProductsApiFetch from '../screens/ProductsApiAxios';
 import { PokemonApiAxios } from '../screens/PokemonApiAxios';
 import MoviesApiAxios from '../screens/MoviesApiAxios';
+import { Posts } from '../screens/Posts';
 
 const Stack = createStackNavigator();
 
@@ -68,6 +70,11 @@ const HomeStack = () => {
                 name="Movies"
                 component={MoviesApiAxios}
                 options={{ title: "Movies" }} 
+            />
+            <Stack.Screen
+                name="Posts"
+                component={Posts}
+                options={{ title: "Posts" }} 
             />
         </Stack.Navigator>
     )
